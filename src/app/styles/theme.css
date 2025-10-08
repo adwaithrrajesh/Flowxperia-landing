@@ -1,0 +1,34 @@
+:root {
+    --color-brand: rgb(2, 154, 161);
+    --color-brand-hover: rgb(1, 130, 135);
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-text-secondary: #555;
+    --color-border: #e5e7eb;
+    --color-card-bg: #f9fafb;
+    --color-card-glow: rgba(2, 154, 161, 0.15);
+  }
+  
+  /* 🌙 Dark theme (Orange Fade) */
+  [data-theme="dark"] {
+    --color-brand: rgb(255, 140, 0); /* orange */
+    --color-brand-hover: rgb(255, 170, 50);
+    --color-bg: radial-gradient(circle at 30% 30%, #1d1f23, #0e0e0f);
+    --color-text: #f3f4f6;
+    --color-text-secondary: #888;
+    --color-border: #2d3748;
+    --color-card-bg: #1a202c;
+    --color-card-glow: rgba(255, 140, 0, 0.15);
+  }
+
+  /* 🌙 Dark mode */
+[data-theme="dark"] {
+    --color-bg: #1d1f23;
+    --color-text: #e5e7eb;
+  }
+  
+  /* ☀️ Light mode */
+  [data-theme="light"] {
+    --color-bg: #ffffff;
+    --color-text: #111111;
+  }

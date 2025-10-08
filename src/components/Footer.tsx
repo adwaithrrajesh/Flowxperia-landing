@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "../context/ThemeContext";
 
@@ -81,7 +80,7 @@ export default function Footer() {
             )}
           </div>
           <p className="text-[var(--color-text-secondary)] text-base leading-relaxed mb-6 max-w-md">
-            Your competitors are scaling with AI while you're still doing it manually.  
+            Your competitors are scaling with AI while you&apos;re still doing it manually.  
             Let FlowXperia automate your sales, support, and growth.
           </p>
           <div className="flex items-center gap-3 text-base text-[var(--color-text-secondary)]">

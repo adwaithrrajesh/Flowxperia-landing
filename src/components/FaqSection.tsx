@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, Bot, Brain, Workflow, LineChart, Zap } from "lucide-react";
+import { ChevronDown, Bot, Brain, Workflow, LineChart, Zap } from "lucide-react";
 
 const faqs = [
   {

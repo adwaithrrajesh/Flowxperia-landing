@@ -33,7 +33,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-[var(--color-text-secondary)] text-sm sm:text-base md:text-lg leading-relaxed max-w-lg px-2 sm:px-0 mb-2 sm:mb-0">
-          Your competitors are scaling while you're still handling operations manually.
+          Your competitors are scaling while you&apos;re still handling operations manually.
           Let us help you automate your ops with AI — so you can focus on growth.
         </p>
 

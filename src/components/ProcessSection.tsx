@@ -53,15 +53,6 @@ const steps = [
 export default function ProcessSection() {
   const [current, setCurrent] = useState(0);
 
-  // 🎛️ Control variables
-  const desktopLineOffset = "-20%"; // Move UP (-) or DOWN (+)
-  const desktopLineLength = "86%"; // Shorter = more gap before circles
-  const desktopLineThickness = "2px";
-
-  const mobileLineOffset = "0%"; // Move LEFT (-) or RIGHT (+)
-  const mobileLineLength = "90%"; // Shorter = more gap before circles
-  const mobileLineThickness = "2px";
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % steps.length);
@@ -99,14 +90,15 @@ export default function ProcessSection() {
 
       {/* Timeline */}
       <div className="relative flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto mb-20 gap-16 md:gap-0 px-4">
-        {/* ✅ Desktop Line */}
+
+        {/* ✅ Desktop Line (Now behind circles) */}
         <div
-          className="hidden md:block absolute bg-gray-600 rounded-full transition-all duration-300"
+          className="hidden md:block absolute bg-gray-600 rounded-full transition-all duration-300 -z-10"
           style={{
-            top: `calc(50% + ${desktopLineOffset})`,
-            left: `calc((100% - ${desktopLineLength}) / 2)`,
-            width: desktopLineLength,
-            height: desktopLineThickness,
+            top: "calc(50% + 0px)",
+            left: "8%",
+            width: "84%",
+            height: "2px",
           }}
         >
           <motion.div
@@ -122,14 +114,14 @@ export default function ProcessSection() {
           />
         </div>
 
-        {/* ✅ Mobile Line */}
+        {/* ✅ Mobile Line (Now behind circles) */}
         <div
-          className="md:hidden absolute bg-gray-600 rounded-full transition-all duration-300"
+          className="md:hidden absolute bg-gray-600 rounded-full transition-all duration-300 -z-10"
           style={{
-            left: `calc(50% + ${mobileLineOffset})`,
-            top: `calc((100% - ${mobileLineLength}) / 2)`,
-            height: mobileLineLength,
-            width: mobileLineThickness,
+            left: "calc(50% - 1px)",
+            top: "5%",
+            height: "90%",
+            width: "2px",
           }}
         >
           <motion.div
@@ -147,7 +139,10 @@ export default function ProcessSection() {
 
         {/* Step Circles */}
         {steps.map((step, i) => (
-          <div key={i} className="flex flex-col items-center text-center relative z-10">
+          <div
+            key={i}
+            className="flex flex-col items-center text-center relative z-20" // z-20 ensures circles ABOVE the line
+          >
             <div
               className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${
                 i === current
